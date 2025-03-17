@@ -1,0 +1,30 @@
+[gd_scene load_steps=5 format=3 uid="uid://bwcsfa4g371dw"]
+
+[ext_resource type="Script" uid="uid://bjvrxp2ywr5bh" path="res://Scripts/Player/player.gd" id="1_a3d8c"]
+[ext_resource type="Texture2D" uid="uid://d3les0mlqncrc" path="res://Assets/kenney_pixel-platformer/Tiles/Characters/tile_0000.png" id="1_uvnfx"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_a3d8c"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_uvnfx")
+}],
+"loop": true,
+"name": &"Idle",
+"speed": 5.0
+}]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_tugb3"]
+radius = 7.0
+height = 20.0
+
+[node name="CharacterBody2D" type="CharacterBody2D"]
+script = ExtResource("1_a3d8c")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_a3d8c")
+animation = &"Idle"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 2)
+shape = SubResource("CapsuleShape2D_tugb3")
