@@ -14,8 +14,20 @@ config/name="2d platformer tutorial"
 config/features=PackedStringArray("4.4", "Forward Plus")
 config/icon="res://icon.svg"
 
+[display]
+
+window/size/viewport_width=576
+window/size/viewport_height=324
+window/size/window_width_override=1152
+window/size/window_height_override=648
+window/stretch/mode="viewport"
+
 [file_customization]
 
 folder_colors={
 "res://Assets/": "red"
 }
+
+[rendering]
+
+textures/canvas_textures/default_texture_filter=0
