@@ -29,18 +29,9 @@ func _handle_jump_state(delta: float) -> void:
 
 
 func _handle_fall_state() -> void:
-	if player.velocity.x > 0:
+	if player.velocity.y > 0:
 		player.change_state(PlayerStates.FALL)
 
-
-func _handle_dash_state() -> void:
-	var is_player_dashing = (
-		Input.is_action_just_pressed(PlayerActions.DASH) and
-		player.can_dash and
-		player.is_on_floor()
-	)
-	if is_player_dashing:
-		player.change_state(PlayerStates.DASH)
 
 
 func _handle_move_state(delta: float) -> void:
