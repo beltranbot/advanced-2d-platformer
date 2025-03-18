@@ -28,3 +28,5 @@ animation = &"Idle"
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0, 2)
 shape = SubResource("CapsuleShape2D_tugb3")
+
+[node name="StateMachine" type="Node" parent="."]
