@@ -1,8 +1,9 @@
-[gd_scene load_steps=10 format=3 uid="uid://bwcsfa4g371dw"]
+[gd_scene load_steps=11 format=3 uid="uid://bwcsfa4g371dw"]
 
 [ext_resource type="Script" uid="uid://bjvrxp2ywr5bh" path="res://Scripts/Player/player.gd" id="1_a3d8c"]
 [ext_resource type="Texture2D" uid="uid://d3les0mlqncrc" path="res://Assets/kenney_pixel-platformer/Tiles/Characters/tile_0000.png" id="1_uvnfx"]
 [ext_resource type="Script" uid="uid://v32aplxm4js5" path="res://Scripts/Player/States/idle_state.gd" id="3_0u5uq"]
+[ext_resource type="Texture2D" uid="uid://ttg35d2pmifj" path="res://Assets/kenney_pixel-platformer/Tiles/Characters/tile_0001.png" id="3_jlvik"]
 [ext_resource type="Script" uid="uid://bw0toxx4xlm27" path="res://Scripts/Player/States/move_state.gd" id="4_jlvik"]
 [ext_resource type="Script" uid="uid://burypid3oxei6" path="res://Scripts/Player/States/jump_state.gd" id="5_gk6dx"]
 [ext_resource type="Script" uid="uid://onc0ux4dp1ca" path="res://Scripts/Player/States/fall_state.gd" id="6_jhyir"]
@@ -17,6 +18,17 @@ animations = [{
 "loop": true,
 "name": &"Idle",
 "speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_jlvik")
+}, {
+"duration": 1.0,
+"texture": ExtResource("1_uvnfx")
+}],
+"loop": true,
+"name": &"Move",
+"speed": 5.0
 }]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_tugb3"]
@@ -28,7 +40,8 @@ script = ExtResource("1_a3d8c")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_a3d8c")
-animation = &"Idle"
+animation = &"Move"
+frame_progress = 0.221812
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0, 2)

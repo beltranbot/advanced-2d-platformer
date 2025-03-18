@@ -22,7 +22,7 @@ var jump_count: int = 0
 
 
 func _ready():
-	change_state("Idle")
+	change_state(PlayerStates.IDLE)
 
 
 func _physics_process(delta: float) -> void:
@@ -35,7 +35,7 @@ func change_state(new_state_name: String) -> void:
 	current_state = new_state_name
 	for state in states:
 		if new_state_name == state.name:
-			state.reset_node()
+			state.reset_state()
 
 
 func _handle_vertical_movement(delta: float) -> void:
