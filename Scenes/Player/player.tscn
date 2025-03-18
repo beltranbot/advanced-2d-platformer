@@ -9,7 +9,7 @@
 [ext_resource type="Script" uid="uid://onc0ux4dp1ca" path="res://Scripts/Player/States/fall_state.gd" id="6_jhyir"]
 [ext_resource type="Script" uid="uid://bkdhrsff3y3cm" path="res://Scripts/Player/States/dash_state.gd" id="7_74mp2"]
 
-[sub_resource type="SpriteFrames" id="SpriteFrames_a3d8c"]
+[sub_resource type="SpriteFrames" id="SpriteFrames_jlvik"]
 animations = [{
 "frames": [{
 "duration": 1.0,
@@ -28,7 +28,7 @@ animations = [{
 }],
 "loop": true,
 "name": &"Move",
-"speed": 5.0
+"speed": 7.0
 }]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_tugb3"]
@@ -39,9 +39,8 @@ height = 20.0
 script = ExtResource("1_a3d8c")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
-sprite_frames = SubResource("SpriteFrames_a3d8c")
+sprite_frames = SubResource("SpriteFrames_jlvik")
 animation = &"Move"
-frame_progress = 0.221812
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0, 2)

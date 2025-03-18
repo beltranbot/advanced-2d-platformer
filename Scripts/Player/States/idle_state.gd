@@ -38,7 +38,7 @@ func _handle_jump_state(delta: float) -> void:
 	if player_is_jumping:
 		player.jump_count += 1
 		player.velocity.y = -player.jump_height * delta
-		player.change_state(PlayerActions.JUMP)
+		player.change_state(PlayerStates.JUMP)
 
 
 func _handle_dash_state() -> void:

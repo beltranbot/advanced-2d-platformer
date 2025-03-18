@@ -34,8 +34,8 @@ func _handle_jump_state(delta: float) -> void:
 	)
 	if is_player_jumping:
 		player.jump_count += 1
-		player.velocity.y = (-player.jump_height) * delta
-		player.change_state(PlayerActions.JUMP)
+		player.velocity.y = -player.jump_height * delta
+		player.change_state(PlayerStates.JUMP)
 
 
 func _handle_dash_state() -> void:
@@ -58,7 +58,7 @@ func _handle_moving_right(delta: float) -> void:
 		return
 
 	var target_velocity: float = min(
-		player.velocity.x + (player.acceleartion * delta),
+		player.velocity.x + (player.acceleration * delta),
 		player.max_speed * delta
 	)
 	player.velocity.x = lerp(player.velocity.x, target_velocity, player.weight)
@@ -68,8 +68,8 @@ func _handle_moving_left(delta: float) -> void:
 	if not Input.is_action_pressed(PlayerActions.MOVE_LEFT):
 		return
 
-	var target_velocity: float = min(
-		player.velocity.x - (player.acceleartion * delta),
-		- player.max_speed * delta
+	var target_velocity: float = max(
+		player.velocity.x - (player.acceleration * delta),
+		(-player.max_speed) * delta
 	)
 	player.velocity.x = lerp(player.velocity.x, target_velocity, player.weight)

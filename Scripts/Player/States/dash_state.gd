@@ -19,7 +19,7 @@ func _physics_process(_delta: float) -> void:
 		player.get_parent().add_child(dash)
 
 
-func reset_node() -> void:
+func reset_state() -> void:
 	pos = player.animated_sprite.flip_h
 	player.can_dash = false
 	if pos:
