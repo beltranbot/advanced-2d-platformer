@@ -15,7 +15,6 @@ func _physics_process(delta: float) -> void:
 
 
 func reset_state() -> void:
-	print("playing move")
 	player.animated_sprite.play(PlayerAnimations.MOVE)
 
 
