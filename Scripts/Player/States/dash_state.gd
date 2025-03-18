@@ -2,11 +2,31 @@ class_name DashState
 extends Node
 
 
-# Called when the node enters the scene tree for the first time.
-func _ready() -> void:
-	pass # Replace with function body.
+var dash_node: PackedScene = preload("res://Scenes/Player/dash_node.tscn")
+var pos: bool
+
+@onready var player: Player = get_parent().get_parent()
 
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
-	pass
+func _physics_process(_delta: float) -> void:
+	if player.current_state == PlayerStates.DASH:
+		var dash: Node = dash_node.instantiate()
+		if pos:
+			dash.direction = -1
+		else:
+			dash.direction = 1
+		dash.global_position = player.global_position
+		player.get_parent().add_child(dash)
+
+
+func reset_node() -> void:
+	pos = player.animated_sprite.flip_h
+	player.can_dash = false
+	if pos:
+		player.velocity.x = 300
+	else:
+		player.velocity.x = -300
+
+	await get_tree().create_timer(0.2).timeout
+
+	player.change_state(PlayerStates.IDLE)
