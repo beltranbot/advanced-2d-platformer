@@ -1,10 +1,12 @@
-[gd_scene load_steps=11 format=3 uid="uid://bwcsfa4g371dw"]
+[gd_scene load_steps=13 format=3 uid="uid://bwcsfa4g371dw"]
 
 [ext_resource type="Script" uid="uid://bjvrxp2ywr5bh" path="res://Scripts/Player/player.gd" id="1_a3d8c"]
 [ext_resource type="Texture2D" uid="uid://d3les0mlqncrc" path="res://Assets/kenney_pixel-platformer/Tiles/Characters/tile_0000.png" id="1_uvnfx"]
 [ext_resource type="Script" uid="uid://v32aplxm4js5" path="res://Scripts/Player/States/idle_state.gd" id="3_0u5uq"]
 [ext_resource type="Texture2D" uid="uid://ttg35d2pmifj" path="res://Assets/kenney_pixel-platformer/Tiles/Characters/tile_0001.png" id="3_jlvik"]
+[ext_resource type="AudioStream" uid="uid://br15e76pd0lhp" path="res://Assets/audio/jump.ogg" id="4_jhyir"]
 [ext_resource type="Script" uid="uid://bw0toxx4xlm27" path="res://Scripts/Player/States/move_state.gd" id="4_jlvik"]
+[ext_resource type="AudioStream" uid="uid://5ajs6cxifh7g" path="res://Assets/audio/audiomass-output.mp3" id="5_74mp2"]
 [ext_resource type="Script" uid="uid://burypid3oxei6" path="res://Scripts/Player/States/jump_state.gd" id="5_gk6dx"]
 [ext_resource type="Script" uid="uid://onc0ux4dp1ca" path="res://Scripts/Player/States/fall_state.gd" id="6_jhyir"]
 [ext_resource type="Script" uid="uid://bkdhrsff3y3cm" path="res://Scripts/Player/States/dash_state.gd" id="7_74mp2"]
@@ -45,6 +47,12 @@ animation = &"Move"
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0, 2)
 shape = SubResource("CapsuleShape2D_tugb3")
+
+[node name="Jump" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("4_jhyir")
+
+[node name="Hit" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("5_74mp2")
 
 [node name="StateMachine" type="Node" parent="."]
 
