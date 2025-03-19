@@ -19,6 +19,7 @@ var jump_count: int = 0
 
 @onready var states = $StateMachine.get_children()
 @onready var animated_sprite: AnimatedSprite2D = $AnimatedSprite2D
+@onready var hit_sound: AudioStreamPlayer2D = $Hit
 
 
 func _ready():
