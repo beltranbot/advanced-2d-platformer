@@ -36,4 +36,9 @@ shape = SubResource("CapsuleShape2D_74gxv")
 position = Vector2(-9, 0)
 target_position = Vector2(0, 17)
 
+[node name="WallCheck" type="RayCast2D" parent="."]
+position = Vector2(6, 0)
+rotation = 1.5708
+target_position = Vector2(0, 17)
+
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
