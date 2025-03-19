@@ -1,0 +1,39 @@
+[gd_scene load_steps=6 format=3 uid="uid://b7iub0k3s8h0o"]
+
+[ext_resource type="Script" uid="uid://bbhv8w12kmlfo" path="res://Scripts/Monsters/alien.gd" id="1_0udku"]
+[ext_resource type="Texture2D" uid="uid://c7500kg53xpqk" path="res://Assets/kenney_pixel-platformer/Tiles/Characters/tile_0009.png" id="1_46s2y"]
+[ext_resource type="Texture2D" uid="uid://caw8t0fy53it8" path="res://Assets/kenney_pixel-platformer/Tiles/Characters/tile_0010.png" id="2_0udku"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_xu6ci"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_46s2y")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_0udku")
+}],
+"loop": true,
+"name": &"Run",
+"speed": 5.0
+}]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_74gxv"]
+height = 24.0
+
+[node name="Alien" type="CharacterBody2D"]
+script = ExtResource("1_0udku")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_xu6ci")
+animation = &"Run"
+autoplay = "Run"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CapsuleShape2D_74gxv")
+
+[node name="CliffCheck" type="RayCast2D" parent="."]
+position = Vector2(-9, 0)
+target_position = Vector2(0, 17)
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
