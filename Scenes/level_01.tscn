@@ -1,10 +1,11 @@
-[gd_scene load_steps=10 format=4 uid="uid://0wqapbwqo8ek"]
+[gd_scene load_steps=11 format=4 uid="uid://0wqapbwqo8ek"]
 
 [ext_resource type="Texture2D" uid="uid://dtlkxxjgx7kgk" path="res://Assets/kenney_pixel-platformer/Tilemap/tilemap_packed.png" id="1_fr3la"]
 [ext_resource type="PackedScene" uid="uid://bwcsfa4g371dw" path="res://Scenes/Player/player.tscn" id="2_pkws4"]
 [ext_resource type="Texture2D" uid="uid://brduuwtutrg5n" path="res://Assets/kenney_pixel-platformer/Tilemap/tilemap-backgrounds.png" id="3_pkws4"]
 [ext_resource type="PackedScene" uid="uid://egkiv7bbtyob" path="res://Scenes/Objects/coin.tscn" id="4_s7ctl"]
 [ext_resource type="PackedScene" uid="uid://b7iub0k3s8h0o" path="res://Scenes/Monsters/alien.tscn" id="5_g0uxb"]
+[ext_resource type="PackedScene" uid="uid://dim43fpd44ss5" path="res://Scenes/Monsters/bat.tscn" id="6_avkje"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_7noh3"]
 texture = ExtResource("1_fr3la")
@@ -415,3 +416,6 @@ position = Vector2(256, 72)
 
 [node name="Alien2" parent="Enemies" instance=ExtResource("5_g0uxb")]
 position = Vector2(152, 192)
+
+[node name="Bat" parent="Enemies" instance=ExtResource("6_avkje")]
+position = Vector2(384, 96)
