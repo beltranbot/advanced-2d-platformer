@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=4 uid="uid://0wqapbwqo8ek"]
+[gd_scene load_steps=16 format=4 uid="uid://0wqapbwqo8ek"]
 
 [ext_resource type="Script" uid="uid://c17etjid458wc" path="res://Scripts/level.gd" id="1_0h1yu"]
 [ext_resource type="Texture2D" uid="uid://dtlkxxjgx7kgk" path="res://Assets/kenney_pixel-platformer/Tilemap/tilemap_packed.png" id="1_fr3la"]
@@ -9,6 +9,7 @@
 [ext_resource type="PackedScene" uid="uid://dim43fpd44ss5" path="res://Scenes/Monsters/bat.tscn" id="6_avkje"]
 [ext_resource type="PackedScene" uid="uid://btygr5fbtorqb" path="res://Scenes/Player/gui.tscn" id="7_gr51b"]
 [ext_resource type="PackedScene" uid="uid://bof1pfgl536do" path="res://Scripts/game_over.tscn" id="8_gn5x3"]
+[ext_resource type="PackedScene" uid="uid://byromriiuwflj" path="res://Scenes/Levels/level_completed.tscn" id="10_qelns"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_7noh3"]
 texture = ExtResource("1_fr3la")
@@ -441,5 +442,9 @@ shape = SubResource("RectangleShape2D_gn5x3")
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="Death"]
 position = Vector2(648, 160)
 shape = SubResource("RectangleShape2D_gn5x3")
+
+[node name="LevelCompleted" parent="." instance=ExtResource("10_qelns")]
+position = Vector2(495, 116)
+scene_path = "uid://bt0bh3qatgwwt"
 
 [connection signal="body_entered" from="Death" to="." method="_on_death_body_entered"]
