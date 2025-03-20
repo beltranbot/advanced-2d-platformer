@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=4 uid="uid://0wqapbwqo8ek"]
+[gd_scene load_steps=13 format=4 uid="uid://0wqapbwqo8ek"]
 
 [ext_resource type="Texture2D" uid="uid://dtlkxxjgx7kgk" path="res://Assets/kenney_pixel-platformer/Tilemap/tilemap_packed.png" id="1_fr3la"]
 [ext_resource type="PackedScene" uid="uid://bwcsfa4g371dw" path="res://Scenes/Player/player.tscn" id="2_pkws4"]
@@ -7,6 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://b7iub0k3s8h0o" path="res://Scenes/Monsters/alien.tscn" id="5_g0uxb"]
 [ext_resource type="PackedScene" uid="uid://dim43fpd44ss5" path="res://Scenes/Monsters/bat.tscn" id="6_avkje"]
 [ext_resource type="PackedScene" uid="uid://btygr5fbtorqb" path="res://Scenes/Player/gui.tscn" id="7_gr51b"]
+[ext_resource type="PackedScene" uid="uid://bof1pfgl536do" path="res://Scripts/game_over.tscn" id="8_gn5x3"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_7noh3"]
 texture = ExtResource("1_fr3la")
@@ -422,3 +423,5 @@ position = Vector2(152, 192)
 position = Vector2(384, 96)
 
 [node name="GUI" parent="." instance=ExtResource("7_gr51b")]
+
+[node name="GameOver" parent="." instance=ExtResource("8_gn5x3")]

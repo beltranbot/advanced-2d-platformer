@@ -1,0 +1,37 @@
+[gd_scene load_steps=2 format=3 uid="uid://bof1pfgl536do"]
+
+[ext_resource type="Script" uid="uid://be3oqpntcm5nb" path="res://Scripts/General/game_over.gd" id="1_aa0g4"]
+
+[node name="GameOver" type="CanvasLayer"]
+process_mode = 3
+layer = 2
+script = ExtResource("1_aa0g4")
+
+[node name="Panel" type="Panel" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="RetryButton" type="Button" parent="."]
+offset_left = 256.0
+offset_top = 192.0
+offset_right = 306.0
+offset_bottom = 223.0
+text = "Retry"
+
+[node name="Label" type="Label" parent="."]
+anchors_preset = 10
+anchor_right = 1.0
+offset_bottom = 128.0
+grow_horizontal = 2
+theme_override_font_sizes/font_size = 62
+text = "Game Over"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="GameOverSound" type="AudioStreamPlayer2D" parent="."]
+process_mode = 3
+
+[connection signal="pressed" from="RetryButton" to="." method="_on_retry_button_pressed"]

@@ -22,4 +22,4 @@ func _process(_delta: float) -> void:
 			heart_container.get_child(heart_container.get_child_count() - 1).queue_free()
 	else:
 		# go to game over
-		pass
+		$"../GameOver".game_over()
